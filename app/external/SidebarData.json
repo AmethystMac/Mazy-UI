@@ -1,0 +1,45 @@
+
+[
+    {
+        "foldername": "Active Notes",
+        "notes": [
+            {
+                "notename": "Note1"
+            },
+            {
+                "notename": "Note2"
+            },
+            {
+                "notename": "Note3"
+            }
+        ]
+    },
+    {
+        "foldername": "Backlog",
+        "notes": [
+            {
+                "notename": "Note1"
+            },
+            {
+                "notename": "Note2"
+            },
+            {
+                "notename": "Note3"
+            }
+        ]
+    },
+    {
+        "foldername": "Questions",
+        "notes": [
+            {
+                "notename": "Note1"
+            },
+            {
+                "notename": "Note2"
+            },
+            {
+                "notename": "Note3"
+            }
+        ]
+    }
+]
