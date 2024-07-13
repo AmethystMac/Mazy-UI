@@ -1,26 +1,29 @@
 "use client";
 
 import { useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Header from './Header';
+import Home from './Home';
 import RichTextEditor from './rich-text-editor/RichTextEditor';
 
-interface NoteProps {
-    note: String
-};
+const Note = () => {
+    
+    const searchParams = useSearchParams();
+    const notename = searchParams.get("notename");
 
-const Note = (props : NoteProps) => {
-
-    const { note } = props;
-
-    useEffect(() => {
-        // Logic to retrieve note from database
-    }, [note]);
+    
 
     return (
-        <div className="h-full w-full flex flex-col">
-            <Header notename={ note } />
-            <RichTextEditor />
-        </div>
+        <div className="h-full w-full    bg-primary">
+            {(
+                notename ?
+                <div className="h-full w-full flex flex-col gap-14    bg-primary">
+                    <Header notename={notename} />
+                    <RichTextEditor />
+                </div> : 
+                <Home />
+            )}
+        </div>  
     );
 };
 

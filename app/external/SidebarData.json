@@ -1,43 +1,55 @@
 
 [
     {
+        "id": 1,
         "foldername": "Active Notes",
         "notes": [
             {
+                "id": 1,
                 "notename": "Note1"
             },
             {
+                "id": 2,
                 "notename": "Note2"
             },
             {
+                "id": 3,
                 "notename": "Note3"
             }
         ]
     },
     {
+        "id": 2,
         "foldername": "Backlog",
         "notes": [
             {
+                "id": 4,
                 "notename": "Note1"
             },
             {
+                "id": 5,
                 "notename": "Note2"
             },
             {
+                "id": 6,
                 "notename": "Note3"
             }
         ]
     },
     {
+        "id": 3,
         "foldername": "Questions",
         "notes": [
             {
+                "id": 7,
                 "notename": "Note1"
             },
             {
+                "id": 8,
                 "notename": "Note2"
             },
             {
+                "id": 9,
                 "notename": "Note3"
             }
         ]

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import './RichTextEditor.css'
+import './RichTextEditor.css';
 
 const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
 
@@ -44,7 +44,7 @@ const RichTextEditor = () => {
             value={text}
             onChange={(newText) => { handleNoteDataChange(newText); }}
             modules={quillModules}
-            className="h-full w-full bg-white"
+            className="bg-primary"
         />
     );
 };

@@ -1,37 +1,45 @@
-import { useEffect } from 'react'
-import FolderName from './accordion/FolderName'
-import sidebarData from "../external/SidebarData.json"
+"use client";
+
+import { useState } from 'react';
+import FolderName from './accordion/FolderName';
 import Profile from './Profile';
 
-interface SidebarProps {
-    setNote: any
-};
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
-const Sidebar = (props : SidebarProps) => {
+import sidebarData from "../external/SidebarData.json";
 
-    const { setNote } = props;
+const Sidebar = () => {
 
-    const items = sidebarData;
+    const folders = sidebarData;
     const profile = {
         username: "Matthew Steve",
         email: "matthewtrichy@gmail.com"
     }
 
+    const [ selectedNote, setSelectedNote ] = useState<any | null>();
+
     return (
         <div className="h-full w-[20rem] p-[2rem] flex flex-col   bg-primary">
             <div>
-                <div className="font-bold text-gray-500">
-                    Matthew's Workspace
+                <div className="flex flex-row    text-secondary">
+                    <div className="text-sm font-bold translate-y-[10%]">
+                        MATTHEW'S WORKSPACE
+                    </div>
+                    <div className="ml-auto">
+                        <AddBoxIcon />
+                    </div>
                 </div>
-                <div className='mt-6'>
-                    { items.map((item, i) => <FolderName {...item} setNote={setNote} key={i}/>) }
+                <div className='mt-4'>
+                    { 
+                        folders.map((folder, i) => <FolderName {...folder} selectedNote={selectedNote} setSelectedNote={setSelectedNote} key={i}/>)
+                    }
                 </div>
             </div>
             <div className="mt-auto">
                 <Profile {...profile}/>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Sidebar
+export default Sidebar;

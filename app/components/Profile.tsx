@@ -10,7 +10,7 @@ const Profile = (props : ProfileProp) => {
     const { username, email } = props;
 
     return (
-        <div className="flex flex-row gap-2   text-gray-500">
+        <div className="flex flex-row gap-2   text-secondary">
             <div className="h-12 w-12">
                 <img className="h-full w-full rounded-[50%]" src={defaultProfilePicture.src} alt="" />
             </div>
