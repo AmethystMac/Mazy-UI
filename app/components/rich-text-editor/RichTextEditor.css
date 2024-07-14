@@ -30,11 +30,11 @@
 }
 
 .ql-clipboard {
-    left: -100000px;
-    height: 1px;
-    overflow-y: hidden;
-    position: absolute;
-    top: 50%;
+    /* left: -100000px; */
+    /* height: 1px; */
+    /* overflow-y: hidden; */
+    /* position: absolute;
+    top: 50%; */
 }
 
 .ql-clipboard p {
@@ -705,7 +705,7 @@
     fill: none;
     stroke: #FFFFFF;
     stroke-miterlimit: 10;
-        stroke-width: 2;
+    stroke-width: 2;
 }
 
 .ql-snow .ql-fill,

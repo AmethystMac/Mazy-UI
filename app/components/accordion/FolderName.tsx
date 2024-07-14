@@ -12,16 +12,38 @@ interface FolderProp {
     foldername: String,
     notes: any[],
     selectedNote: String, 
-    setSelectedNote: any,
+    setSelectedNote: Function,
+    draggedNote: any,
+    droppingPosition: any,
+    sortNotes: Function,
 };
 
 const FolderName = (props : FolderProp) => {
 
-    const [ toggle, setToggle ] = useState(false);
-    const { id, foldername, notes, selectedNote, setSelectedNote } = props;
+    const { 
+        id,
+        foldername,
+        notes,
+        selectedNote,
+        setSelectedNote,
+        draggedNote,
+        droppingPosition,
+        sortNotes,
+    } = props;
+
+    const [ toggle, setToggle ] = useState<any | null>(false);
 
     const toggleAccordion = () => {
         setToggle(!toggle);
+    };
+
+    const noteNameProps = {
+        folderId: id,
+        selectedNote,
+        setSelectedNote,
+        draggedNote,
+        droppingPosition,
+        sortNotes,
     };
 
     return (
@@ -38,10 +60,12 @@ const FolderName = (props : FolderProp) => {
                 </div>
             </div>
             <div>
-                { toggle ? (notes.map((note, i) => <NoteName foldername={foldername} selectedNote={selectedNote} setSelectedNote={setSelectedNote} {...note} key={i} /> )) : ( null ) }
+                { 
+                    toggle && notes.map((note : any, i : Number) => <NoteName {...note} {...noteNameProps} key={i} />)
+                }
             </div>
         </div>
-    )
+    );
 };
 
 export default FolderName;
